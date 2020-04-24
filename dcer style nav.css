@@ -1,0 +1,59 @@
+body {
+    background-color: #D4F7EC;
+  }
+  
+  h1 {
+    background-color: #448D76; padding: 40px; border: 3px solid #FCBA12;
+    color: #340926;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 3em;}
+    
+
+
+   
+  
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 140px;
+        background-color: #448D76;
+      }
+      
+      li a {
+        display: block;
+        color: #FCBA12;
+        padding: 12px 16px;
+        text-decoration: none;
+      }
+      
+      /* Change the link color on hover */
+      li a:hover {
+        background-color: #FCBA12;
+        color: #AE0D7A;
+      }
+  h2 {
+     font: 120%; font-family: Tahoma, Geneva, sans-serif;
+    color: #340926; 
+    
+  }
+  h3 {
+    font: 120%; font-family: Tahoma, Geneva, sans-serif;
+    color: #340926;
+  }
+  p {
+      font: 120%; font-family: Tahoma, Geneva, sans-serif;
+      color: #340926;}
+  
+    a.navitext:link  {text-decoration: none; color: #FCBA12;}
+    a.navitext:visited {text-decoration: none; color: #FCBA12;}
+    a.navitext:hover {text-decoration: none; color: #AE0D7A;}
+    a.navitext:active   {text-decoration: none; color: #FCBA12;}
+  a:link  {text-decoration: none; color: #AE0D7A;}
+  a:visited  {text-decoration: none; color: #AE0D7A;;}
+  a:hover  {text-decoration: none; color: #FCBA12}
+  a:active  {text-decoration: none; color: #FCBA12}
+      
+      
+    }
+    

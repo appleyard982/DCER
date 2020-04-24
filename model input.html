@@ -1,0 +1,795 @@
+<html>
+    <body>
+        <head>
+          <link rel="stylesheet" type="text/css" href="dev style.css">
+        <title>DCER</title>
+        <meta charset="UTF-8">
+        <script>
+          function myFunction() {
+            var southThanet = document.getElementById("econstit");
+            
+          }
+          
+          </script>
+        </head>
+    
+        <h2 style="color: white;">Constituency Map</h2>
+    
+        <div class="topnav">
+            <a  href="/index/">Home</a>
+            <a  href="/reforms/">Reforms</a> 
+            <a  href="/vdcpr/">VDCPR</a> </li>
+            <a  href="/contact/">Contact</a>
+            
+        </div>
+
+        <h3>Input constituency its wards and its constituency neighbours</h3>
+   
+        <script>
+  
+
+  
+  var thanetN = {Constituencyname:"Thanet N", Con15:23045, Con17:27163, Con19:30066,  Con24:CON24,
+                                                   Lab15:8411, Lab17:16425, Lab19:12877, Lab24:LAB24,
+                                                                   Lib19:3439, Lib24:LIB24,  
+                                                                   Grn19:1796, Grn24:GRN24,                                                                     
+                          Neighbour1:"Thanet S", Neighbour2:"Canterbury" }
+
+              
+  var thanetS = {Constituencyname:"Thanet S", Con15:18838, Con17:25262, Con19:27084, Con24:CON24,
+                                                   Lab15:11740, Lab17:18875, Lab19:16497, Lab24:LAB24,
+                                                                   Lib19:2727, Lib24:LIB24,
+                                                                   Grn19:1949, Grn24:GRN24,
+                          Neighbour1:"Canterbury", Neighbour2:"Dover", Neighbour3:"Thanet N", }
+
+var dover = {Constituencyname:"Dover", Con15:21737, Con17:27211, Con19:28830, Con24:CON24,
+                                                   Lab15:15443, Lab17:20774, Lab19:16552, Lab24:LAB24,
+                                                                   Lib19:2895, Lib24:LIB24, 
+                                                                   Grn19:1371, Grn24:GRN24,  
+                          Neighbour1:"Thanet S", Neighbour2:"Folkstone", Neighbour3:"Canterbury", }
+
+var  canterbury = {Constituencyname:"Canterbury", Con15:22918, Con17:25572, Con19:27182, Con24:CON24,
+                                                   Lab15:13120, Lab17:25385, Lab19:29018, Lab24:LAB24,
+                                                                   Lib19:3408, Lib24:LIB24,
+                                                                   Grn24:GRN24,  
+          Neighbour1:"Faversham", Neighbour2:"Ashford", Neighbour3:"Folkstone", Neighbour4:"Thanet S", Neighbour5:"Dover", Neighbour6:"Thanet N", }
+
+var folkstone = {Constituencyname:"Folkstone", Con15:26323, Con17:32197, Con19:35483, Con24:CON24,
+                                                   Lab15:7939, Lab17:16786, Lab19:14146, Lab24:LAB24,
+                                                                   Lib19:5755, Lib24:LIB24,
+                                                                   Grn19:2706, Grn24:GRN24,                                                                                              
+          Neighbour1:"Hastings", Neighbour2:"Ashford", Neighbour3:"Canterbury", Neighbour5:"Dover", }
+
+
+var  ashford = {Constituencyname:"Ashford", Con15:30094, Con17:35318, Con19:37270, Con24:CON24,
+                                                   Lab15:10580, Lab17:17840, Lab19:13241, Lab24:LAB24,
+                                                                   Lib19:6048, Lib24:LIB24,
+                                                                   Grn19:2638, Grn24:GRN24,                                                                                                    
+  Neighbour1:"Faversham", Neighbour2:"Maidstone", Neighbour3:"Tunbridge Wells", Neighbour4:"Bexhill", Neighbour5:"Hastings", } 
+                                            
+var hastings = {Constituencyname:"Hastings & Rye", Con15:22868, Con17:25668, Con19:26896, Con24:CON24,
+                                                   Lab15:17890, Lab17:25322, Lab19:22853, Lab24:LAB24,
+                                                                   Lib19:3960, Lib24:LIB24,
+                                                                   Grn24:GRN24,
+                                                                                                     
+  Neighbour1:"Ashford", Neighbour2:"Bexhill", Neighbour3:"Folkstone", }
+
+var bexhill = {Constituencyname:"Bexhill", Con15:30245, Con17:36854, Con19:37590, Con24:CON24,
+                                                   Lab15:7797, Lab17:14689, Lab19:11531, Lab24:LAB24,
+                                                                   Lib19:7280, Lib24:LIB24,
+                                                                   Grn19:2692, Grn24:GRN24,                           
+  Neighbour1:"Eastbourne", Neighbour2:"Lewes", Neighbour3:"Wealden", Neighbour4:"Tunbridge", Neighbour5:"Ashford", Neighbour6:"Hastings & Rye", } 
+                                                
+var tunbridgeWells = {Constituencyname:"Tunbridge Wells", Con15:30181, Con17:30856, Con19:30119,  Con24:CON24,
+                                                   Lab15:7307, Lab17:14391, Lab19:8098,
+                                                                   Lib19:15474, Lib24:LIB24,
+                                                                   Grn24:GRN24,                                  
+  Neighbour1:"Bexhill", Neighbour2:"Wealden", Neighbour3:"Tonbridge", Neighbour4:"Maidstone", Neighbour5:"Ashford", }
+
+var  maidstone= {Constituencyname:"Maidstone", Con15:22745, Con17:29156, Con19:31220, Con24:CON24,
+                                                   Lab15:5268, Lab17:11433, Lab19:9448, Lab24:LAB24,
+                                                                   Lib19:8482, Lib24:LIB24,
+                                                                   Grn19:2172, Grn24:GRN24,                                
+  Neighbour1:"Faversham", Neighbour2:"Ashford", Neighbour3:"Tunbrdge Wells", Neighbour4:"Tonbridge", Neighbour5:"Chatham", } 
+                                                
+var faversham = {Constituencyname:"Faversham", Con15:24895, Con17:30390, Con19:31864,  Con24:CON24,
+                                                   Lab15:7403, Lab17:12977, Lab19:9888, Lab24:LAB24,
+                                                                   Lib19:6170, Lib24:LIB24,
+                                                                   Grn19:2103, Grn24:GRN24,
+                                                                                                     
+  Neighbour1:"Gillingham", Neighbour2:"Chatham", Neighbour3:"Maidstone", Neighbour4:"Ashford", Neighbour5:"Canterbury", Neighbour6:"Sittingbourne", }
+
+var sittingbourne = {Constituencyname:"Sittingbourne", Con15:24425, Con17:30911, Con19:34742,  Con24:CON24,
+                                                   Lab15:9673, Lab17:15700, Lab19:10263, Lab24:LAB24,
+                                                                   Lib19:3213, Lib24:LIB24,
+                                                                   Grn19:1188, Grn24:GRN24,                                  
+  Neighbour1:"Faversham", Neighbour2:"Gillingham", } 
+                                                
+var gillingham = {Constituencyname:"Gillingham", Con15:22590, Con17:27091, Con19:28173, Con24:CON24,
+                                                   Lab15:12060, Lab17:17661, Lab19:13054, Lab24:LAB24,
+                                                                   Lib19:2503, Lib24:LIB24,
+                                                                   Grn19:1043, Grn24:GRN24,                                  
+  Neighbour1:"Faversham", Neighbour2:"Chatham", Neighbour3:"Sittingbourne", Neighbour4:"Rochester", }
+  
+var rochester = {Constituencyname:"", Con15:23142, Con17:29232, Con19:31151, Con24:CON24,
+                                                   Lab15:10396, Lab17:19382, Lab19:14079, Lab24:LAB24,
+                                                                   Lib19:3717, Lib24:LIB24,
+                                                                   Grn19:1312, Grn24:GRN24,                                  
+  Neighbour1:"Gillingham", Neighbour2:"Chatham", Neighbour3:"Gravesham", } 
+                          
+
+                          
+var chatham = {Constituencyname:"Chatham", Con15:21614, Con17:25587, Con19:28856, Con24:CON24,
+                                                   Lab15:10159, Lab17:15129, Lab19:10316, Lab24:LAB24,
+                                                                   Lib19:2866, Lib24:LIB24,
+                                                                   Grn19:1090, Grn24:GRN24,                                  
+  Neighbour1:"Tonbridge", Neighbour2:"Maidstone", Neighbour3:"Faversham", Neighbour4:"Gillingham", Neighbour5:"Rochester", Neighbour6:"Gravesham", }
+  
+var  gravesham = {Constituencyname:"Gravesham", Con15:23484, Con17:27237, Con19:29580, Con24:CON24,
+                                                   Lab15:15114, Lab17:17890, Lab19:13999, Lab24:LAB24,
+                                                                   Lib19:2584, Lib24:LIB24,
+                                                                   Grn19:1397, Grn24:GRN24,                                  
+  Neighbour1:"Dartford", Neighbour2:"Tonbridge", Neighbour3:"Chatham", Neighbour4:"Rochester", } 
+                          
+var dartford = {Constituencyname:"Dartford", Con15:25670, Con17:31210, Con19:34006, Con24:CON24,
+                                                   Lab15:13325, Lab17:18024, Lab19:14846,
+                                                                   Lib19:3735, Lib24:LIB24,
+                                                                   Grn19:1435, Grn24:GRN24,                                  
+  Neighbour1:"Thurrock", Neighbour2:"Bexley Heath", Neighbour3:"Old Bexley", Neighbour4:"Sevenoaks", Neighbour5:"Tonbridge", Neighbour6:"Gravesham", }
+
+var onbridge = {Constituencyname:"Tonbridge", Con15:31887, Con17:36218, Con19:35784, Con24:CON24,
+                                                   Lab15:7604, Lab17:12710, Lab19:8286, Lab24:LAB24,
+                                                                   Lib19:8843, Lib24:LIB24,
+                                                                   Grn19:4090, Grn24:GRN24,                                  
+  Neighbour1:"Sevenoaks", Neighbour2:"East Surrey", Neighbour3:"Maidstone", Neighbour4:"Chatham", Neighbour5:"Gravesham", Neighbour6:"Dartford", Neighbour7:"Wealden", Neighbour8:"Tunbridge Wells", } 
+                                            
+var sevenoaks = {Constituencyname:"Sevenoaks", Con15:28531, Con17:32644, Con19:30932, Con24:CON24,
+                                                   Lab15:6448, Lab17:10727, Lab19:6946, Lab24:LAB24,
+                                                                   Lib19:10114, Lib24:LIB24,
+                                                                   Grn19:1974, Grn24:GRN24,                                  
+  Neighbour1:"Orpington", Neighbour2:"Tonbridge", Neighbour3:"East Surrey", Neighbour4:"Dartford", }
+
+var orpington = {Constituencyname:"Orpington", Con15:28152, Con17:31762, Con19:30882, Con24:CON24,
+                                                   Lab15:7645, Lab17:12309, Lab19:8504, Lab24:LAB24,
+                                                                   Lib19:7552, Lib24:LIB24,
+                                                                   Grn19:1783, Grn24:GRN24,                                  
+  Neighbour1:"Sevenoaks", Neighbour2:"East Surrey", Neighbour3:"Croydon Central", Neighbour4:"Beckenham", Neighbour5:"Bromley", Neighbour6:"Old Bexley", Neighbour7:"", Neighbour8:"", }
+
+var eastbourne = {Constituencyname:"Eastbourne", Con15:20934, Con17:25315, Con19:26951, Con24:CON24,
+                                                   Lab15:4143, Lab17:4671, Lab19:3848, Lab24:LAB24,
+                                                                   Lib19:22620, Lib24:LIB24,
+                                                                   Grn24:GRN24,
+                                                                   Bxp19:1530,                                  
+  Neighbour1:"Bexhill", Neighbour2:"Lewes", } 
+                                             
+var wealden = {Constituencyname:"wealden", Con15:32508, Con17:37027, Con19:37043, Con24:CON24,
+                                                   Lab15:6165, Lab17:13399, Lab19:9377, Lab24:LAB24,
+                                                                   Lib19:11388, Lib24:LIB24,
+                                                                   Grn19:3099, Grn24:GRN24,                                 
+  Neighbour1:"Tunbridge Wells", Neighbour2:"Tonbridge", Neighbour3:"East Surrey", Neighbour4:"Mid Sussex", Neighbour5:"Lewes", Neighbour6:"Bexhill", Neighbour7:"", Neighbour8:"", }
+
+var eSurrey = {Constituencyname:"East Surrey", Con15:32211, Con17:35310, Con19:35624, Con24:CON24,
+                                                   Lab15:6627, Lab17:11396, Lab19:8247, Lab24:LAB24,
+                                                                   Lib19:11584, Lib24:LIB24,
+                                                                   Grn19:2340, Grn24:GRN24,                                  
+  Neighbour1:"Mid Sussex", Neighbour2:"Tonbridge", Neighbour3:"Sevenoaks", Neighbour4:"Orpington", Neighbour5:"Croydon Central", Neighbour6:"Croydon South", Neighbour7:"Horsham", Neighbour8:"Crawley", Neighbour9:"Mole Valley", Neighbour10:"Reigate", } 
+                                                
+var reigate = {Constituencyname:"Reigate", Con15:29151, Con17:30896, Con19:28665, Con24:CON24,
+                                                   Lab15:6578, Lab17:13282, Lab19:10355, Lab24:LAB24,
+                                                                   Lib19:10320, Lib24:LIB24,
+                                                                   Grn19:3169, Grn24:GRN24,                                 
+  Neighbour1:"Mole Valley", Neighbour2:"East Surrey", Neighbour3:"Croydon South", Neighbour4:"Carshalton", Neighbour5:"Sutton", Neighbour6:"Epsom", }
+
+var moleValley = {Constituencyname:"Mole Valley", Con15:33434, Con17:35092, Con19:31656, Con24:CON24,
+                                                   Lab15:4565, Lab17:7864, Lab19:2965, Lab24:LAB24,
+                                                                   Lib19:19615, Lib24:LIB24,
+                                                                   Grn19:1874, Grn24:GRN24,                                  
+  Neighbour1:"Reigate", Neighbour2:"Epsom", Neighbour3:"Esher", Neighbour4:"Runnymede", Neighbour5:"Woking", Neighbour6:"Guilford", Neighbour7:"Horsham", Neighbour8:"Crawley", Neighbour8:"East Surrey",} 
+                                                
+var crawley = {Constituencyname:"", Con15:22829, Con17:25426, Con19:27040, Con24:CON24,
+                                                   Lab15:16303, Lab17:22969, Lab19:18680, Lab24:LAB24,
+                                                                   Lib19:2728, Lib24:LIB24,
+                                                                   Grn19:1451, Grn24:GRN24,                                  
+  Neighbour1:"East Surrey", Neighbour2:"Horsham", Neighbour3:"Mole Vally", }
+  
+var horsham = {Constituencyname:"Horsham", Con15:32627, Con17:36906, Con19:35900, Con24:CON24,
+                                                   Lab15:6499, Lab17:13422, Lab19:9424, Lab24:LAB24,
+                                                                   Lib19:14773, Lib24:LIB24,
+                                                                   Grn19:2668, Grn24:GRN24,                                  
+  Neighbour1:"East Surrey", Neighbour2:"Midsussex", Neighbour3:"Arundel", Neighbour4:"Chichester", Neighbour5:"Guilford", Neighbour6:"Crawley", Neighbour7:"Mole Valley", } 
+                          
+
+                          
+var midSussex = {Constituencyname:"Mid Sussex", Con15:32268, Con17:35082, Con19:33455, Con24:CON24,
+                                                   Lab15:7982, Lab17:15409, Lab19:11218, Lab24:LAB24,
+                                                                   Lib19:15253, Lib24:LIB24,
+                                                                   Grn19:2234, Grn24:GRN24,                                  
+  Neighbour1:"Horsham", Neighbour2:"Arundel", Neighbour3:"Lewes", Neighbour4:"Wealden", Neighbour5:"East Surrey", }
+  
+var lewes  = {Constituencyname:"Lewes", Con15:19206, Con17:26820, Con19:26268, Con24:CON24,
+                                                   Lab15:5000, Lab17:6060, Lab19:3206, Lab24:LAB24,
+                                                                   Lib19:23811, Lib24:LIB24,
+                                                                   Grn19:1453, Grn24:GRN24,                                  
+  Neighbour1:"Brighton Pavillion", Neighbour2:"Arundel", Neighbour3:"Wealden", Neighbour4:"Bexhill", Neighbour5:"Eastbourne", Neighbour6:"Brighton Kemptown", } 
+                          
+var arundel = {Constituencyname:"Arundel", Con15:34331, Con17:37573, Con19:35566, Con24:CON24,
+                                                   Lab15:6324, Lab17:13690, Lab19:9722, Lab24:LAB24,
+                                                                   Lib19:13045, Lib24:LIB24,
+                                                                   Grn19:2519, Grn24:GRN24,                                  
+  Neighbour1:"Brighton Pavillion", Neighbour2:"Lewes", Neighbour3:"Mid Sussex", Neighbour4:"Horsham", Neighbour5:"Chichester", Neighbour6:"Hove", Neighbour7:"East Worthing", Neighbour8:"Worthing West", }
+
+  var bognorRegis = {Constituencyname:"Bognor Regis", Con15:24185, Con17:30276, Con19:32521, Con24:CON24,
+                                                   Lab15:6508, Lab17:12782, Lab19:10018, Lab24:LAB24,
+                                                                   Lib19:5645, Lib24:LIB24,
+                                                                   Grn19:1826, Grn24:GRN24,                                  
+  Neighbour1:"Chichester", Neighbour2:"Arundel", Neighbour3:"Worthing West", }
+
+  var worthingWest = {Constituencyname:"Worthing West", Con15:26124, Con17:30181, Con19:30475, Con24:CON24,
+                                                   Lab15:7955, Lab17:18091, Lab19:15652, Lab24:LAB24,
+                                                                   Lib19:6024, Lib24:LIB24,
+                                                                   Grn19:2008, Grn24:GRN24,                                  
+  Neighbour1:"Bognor Regis", Neighbour2:"Arundel", Neighbour3:"East Worthing", }
+
+  var eastWorthing = {Constituencyname:"East Worthing", Con15:24686, Con17:25988, Con19:27107, Con24:CON24,
+                                                   Lab15:9737, Lab17:20882, Lab19:19633, Lab24:LAB24,
+                                                                   Lib19:4127, Lib24:LIB24,
+                                                                   Grn19:2006, Grn24:GRN24,                                  
+  Neighbour1:"Worthing West", Neighbour2:"Arundel", Neighbour3:"Hove", }
+
+  var hove = {Constituencyname:"Hove", Con15:20846, Con17:18185, Con19:15832, Con24:CON24,
+                                                   Lab15:22082, Lab17:36942, Lab19:32876, Lab24:LAB24,
+                                                                   Lib19:3731, Lib24:LIB24,
+                                                                   Grn19:2496, Grn24:GRN24,
+                                                                   Bxp19:1111,                                  
+  Neighbour1:"East Worthing", Neighbour2:"Arundel", Neighbour3:"Brighton Pavillion", }
+
+  var brightonPav = {Constituencyname:"Brighton Pavillion", Con15:12448, Con17:11082, Con19:10176, Con24:CON24,
+                                                   Lab15:14904, Lab17:15450, Lab19:13211, Lab24:LAB24,
+                                                                    Lib24:LIB24,
+                                                                   Grn19:33151, Grn24:GRN24,
+                                                                   Bxp19:770,                                  
+  Neighbour1:"Hove", Neighbour2:"Arundel", Neighbour3:"Brighton Kemptown", Neighbour4:"Lewes", }
+  
+  var brightonKemptown = {Constituencyname:"Brighton Kemptown", Con15:18428, Con17:18835, Con19:16972, Con24:CON24,
+                                                   Lab15:17738, Lab17:28703, Lab19:25033, Lab24:LAB24,
+                                                                   Lib19:2964, Lib24:LIB24,
+                                                                   Grn19:2237, Grn24:GRN24,
+                                                                   Bxp19:1327,                                  
+  Neighbour1:"Lewes", Neighbour2:"Brighton Pavillion", }
+  
+  
+  
+  
+  var havant = {Constituencyname:"Havant", Con15:23159, Con17:27676, Con19:30051, Con24:CON24,
+                                                   Lab15:7149, Lab17:11720, Lab19:8259, Lab24:LAB24,
+                                                                   Lib19:5708, Lib24:LIB24,
+                                                                   Grn19:1597, Grn24:GRN24,                                  
+  Neighbour1:"Chichester", Neighbour2:"Meon Valley", Neighbour3:"Portsmouth North", }
+
+  var meonValley = {Constituencyname:"Meon Valley", Con15:31578, Con17:35624, Con19:35271, Con24:CON24,
+                                                   Lab15:5656, Lab17:9932, Lab19:5644, Lab24:LAB24,
+                                                                   Lib19:11716, Lib24:LIB24,
+                                                                   Grn19:2198, Grn24:GRN24,                                  
+  Neighbour1:"Havant", Neighbour2:"Portsmouth North", Neighbour3:"Fareham", Neighbour4:"Eastleigh", Neighbour5:"Winchester", Neighbour6:"East Hampshire", Neighbour7:"Chichester", }
+  
+  var portsmouthN = {Constituencyname:"Portsmouth North", Con15:21343, Con17:25860, Con19:28172, Con24:CON24,
+                                                   Lab15:10806, Lab17:15895, Lab19:12392, Lab24:LAB24,
+                                                                   Lib19:3419, Lib24:LIB24,
+                                                                   Grn19:1304, Grn24:GRN24,                                  
+  Neighbour1:"Portsmouth South", Neighbour2:"Havant", Neighbour3:"Fareham", Neighbour4:"Meon Valley", }
+  
+  var portsmouthS = {Constituencyname:"Portsmouth South", Con15:14585, Con17:16736, Con19:17705, Con24:CON24,
+                                                   Lab15:8184, Lab17:18290, Lab19:23068, Lab24:LAB24,
+                                                                   Lib19:5418, Lib24:LIB24,
+                                                                   Bxp19:994,
+                                                                   Grn24:GRN24,                                  
+  Neighbour1:"Portsmouth North", Neighbour2:"Isle of Wight", Neighbour3:"Gosport", }
+  
+  var gosport = {Constituencyname:"Gosport", Con15:26364, Con17:30647, Con19:32226, Con24:CON24,
+                                                   Lab15:6926, Lab17:13436, Lab19:8948, Lab24:LAB24,
+                                                                   Lib19:5473, Lib24:LIB24,
+                                                                   Grn19:1806, Grn24:GRN24,                                  
+  Neighbour1:"Portsmouth South", Neighbour2:"Fareham", }
+  
+  var fareham = {Constituencyname:"Fareham", Con15:30689, Con17:35915, Con19:36459, Con24:CON24,
+                                                   Lab15:8427, Lab17:14360, Lab19:10373, Lab24:LAB24,
+                                                                   Lib19:8006, Lib24:LIB24,
+                                                                   Grn19:2412, Grn24:GRN24,                                  
+  Neighbour1:"Gosport", Neighbour2:"Portsmouth North", Neighbour3:"Eastleigh", Neighbour4:"Meon Valley", }
+  
+  var eastleigh  = {Constituencyname:"Eastleigh", Con15:23464, Con17:28889, Con19:32690, Con24:CON24,
+                                                   Lab15:7181, Lab17:11454, Lab19:7559, Lab24:LAB24,
+                                                                   Lib19:17083, Lib24:LIB24,
+                                                                   Grn19:1639, Grn24:GRN24,                                  
+  Neighbour1:"Fareham", Neighbour2:"Meon Valley", Neighbour3:"Winchester", Neighbour4:"Romsey", Neighbour5:"Southampton Itchen", }
+  
+  var southamptonItchen = {Constituencyname:"Southampton Itchen", Con15:18656, Con17:21773, Con19:23952, Con24:CON24,
+                                                   Lab15:16340, Lab17:21742, Lab19:19454, Lab24:LAB24,
+                                                                   Lib19:2503, Lib24:LIB24,
+                                                                   Grn19:1040, Grn24:GRN24,                                  
+  Neighbour1:"Eastleigh", Neighbour2:"Romsey", Neighbour3:"Southampton Test", Neighbour8:"Isle of Wight", }
+  
+  var southamptonTest  = {Constituencyname:"Southampton Test", Con15:14207, Con17:16006, Con19:16043, Con24:CON24,
+                                                   Lab15:18017, Lab17:27509, Lab19:22256, Lab24:LAB24,
+                                                                   Lib19:3449, Lib24:LIB24,
+                                                                   Grn19:1433, Grn24:GRN24,
+                                                                   Bxp19:1591,                                  
+  Neighbour1:"New Forest East", Neighbour2:"Romsey", Neighbour3:"Southampton Itchen", }
+  
+  var newForestEast = {Constituencyname:"New Forest East", Con15:27819, Con17:32162, Con19:32769, Con24:CON24,
+                                                   Lab15:6018, Lab17:10167, Lab19:7518, Lab24:LAB24,
+                                                                   Lib19:7390, Lib24:LIB24,
+                                                                   Grn19:2434, Grn24:GRN24,                                  
+  Neighbour1:"New Forest West", Neighbour2:"Southampton Test", Neighbour3:"Romsey", Neighbour4:"Sailsbury", }   
+  
+  var newForestWest = {Constituencyname:"New Forest West", Con15:28420, Con17:33170, Con19:32113, Con24:CON24,
+                                                   Lab15:5133, Lab17:9739, Lab19:6595, Lab24:LAB24,
+                                                                   Lib19:7710, Lib24:LIB24,
+                                                                   Grn19:3888, Grn24:GRN24,                                 
+  Neighbour1:"Isle of Wight", Neighbour2:"New Forest East", Neighbour3:"Salisbury", Neighbour4:"North Dorset", Neighbour5:"Christchurch", }
+  
+  var romsey = {Constituencyname:"Romsey", Con15:26285, Con17:28668, Con19:27862, Con24:CON24,
+                                                   Lab15:5749, Lab17:9614, Lab19:5898, Lab24:LAB24,
+                                                                   Lib19:16990, Lib24:LIB24,
+                                                                   Grn24:GRN24,                                 
+  Neighbour1:"New Forest East", Neighbour2:"Salisbury", Neighbour3:"North West Hampshire", Neighbour4:"Winchester", Neighbour5:"Eastleigh", Neighbour6:"Southampton Test", Neighbour7:"Southampton Itchen", }
+  
+  var winchester = {Constituencyname:"Winchester", Con15:30425, Con17:29729, Con19:28480, Con24:CON24,
+                                                   Lab15:4613, Lab17:6007, Lab19:2723, Lab24:LAB24,
+                                                                   Lib19:27445, Lib24:LIB24,
+                                                                   Grn24:GRN24,                                  
+  Neighbour1:"Eastleigh", Neighbour2:"Romsey", Neighbour3:"North West Hampshire", Neighbour4:"North East Hampshire", Neighbour5:"East Hampshire", Neighbour6:"Meon Valley", Neighbour7:"", Neighbour8:"", }
+  
+  var isleOfWight = {Constituencyname:"Isle of Wight", Con15:28591, Con17:38190, Con19:41815, Con24:CON24,
+                                                   Lab15:8984, Lab17:17121, Lab19:18078, Lab24:LAB24,
+                                                   Lib24:LIB24,
+                                                                   Grn19:11338, Grn24:GRN24,                                  
+  Neighbour1:"New Forest West", Neighbour2:"Southampton Itchen", Neighbour3:"Portsmouth North", }
+  
+  
+  var poole = {Constituencyname:"", Con15:23745, Con17:28888, Con19:29599, Con24:CON24,
+                                                   Lab15:6102, Lab17:14679, Lab19:10483, Lab24:LAB24,
+                                                                   Lib19:7819, Lib24:LIB24,
+                                                                   Grn19:1702, Grn24:GRN24,                                  
+  Neighbour1:"Bournemouth", Neighbour2:"Mid Dorset", }
+
+  var midDorset  = {Constituencyname:"Mid Dorset", Con15:23639, Con17:28585, Con19:29548, Con24:CON24,
+                                                   Lab15:2767, Lab17:6423, Lab19:3402, Lab24:LAB24,
+                                                                   Lib19:14650, Lib24:LIB24,
+                                                                   Grn19:1330, Grn24:GRN24,                                 
+  Neighbour1:"Poole", Neighbour2:"Bournemouth", Neighbour3:"Christchurch", Neighbour4:"North Dorset", Neighbour5:"South Dorset", }
+
+  var southDorset = {Constituencyname:"South Dorset", Con15:23756, Con17:29135, Con19:30024, Con24:CON24,
+                                                   Lab15:11762, Lab17:17440, Lab19:12871, Lab24:LAB24,
+                                                                   Lib19:5432, Lib24:LIB24,
+                                                                   Grn19:2246, Grn24:GRN24,                                 
+  Neighbour1:"Mid Dorset", Neighbour2:"West Dorset", }
+
+  var filton = {Constituencyname:"Filton", Con15:22920, Con17:25339, Con19:26293, Con24:CON24,
+                                                   Lab15:13082, Lab17:21149, Lab19:20647, Lab24:LAB24,
+                                                                   Lib19:4992, Lib24:LIB24,
+                                                                   Grn19:1563, Grn24:GRN24,                                  
+  Neighbour1:"Newport East", Neighbour2:"Bristol NW", Neighbour3:"Bristol East", Neighbour4:"Kingswood", Neighbour5:"Thornbury", }
+
+  var newportEast = {Constituencyname:"Newport East", Con15:9585, Con17:12801, Con19:14133, Con24:CON24,
+                                                   Lab15:14290, Lab17:20804, Lab19:16125, Lab24:LAB24,
+                                                                   Lib19:2121, Lib24:LIB24,
+                                                                   Grn19:577, Grn24:GRN24,
+                                                                   Bxp19:2454,
+                                                                   Pld19:872, Pld24:PLD24,                                  
+  Neighbour1:"Newport West", Neighbour2:"Monmouth", Neighbour3:"Filton", }
+
+  var monmouth = {Constituencyname:"Monmouth", Con15:23701, Con17:26411, Con19:26160, Con24:CON24,
+                                                   Lab15:12719, Lab17:18205, Lab19:16178, Lab24:LAB24,
+                                                                   Lib19:4909, Lib24:LIB24,
+                                                                   Grn19:1353, Grn24:GRN24,
+                                                                   Pld19:1182, Pld24:PLD24,                                  
+  Neighbour1:"Thornbury", Neighbour2:"Newport East", Neighbour3:"Newport West", Neighbour4:"Torfaen", Neighbour5:"Blaenau", Neighbour6:"Brecon", Neighbour7:"Hereford", Neighbour8:"Forest of Dean", }
+
+  var thornbury = {Constituencyname:"Thornbury", Con15:19924, Con17:28008, Con19:30202, Con24:CON24,
+                                                   Lab15:3775, Lab17:6112, Lab19:4208, Lab24:LAB24,
+                                                                   Lib19:17833, Lib24:LIB24, 
+                                                                   Grn24:GRN24,                                 
+  Neighbour1:"Monmouth", Neighbour2:"Stroud", Neighbour3:"Cotswolds", Neighbour4:"North Wiltshire", Neighbour5:"Kingswood", Neighbour6:"NE Somerset", Neighbour7:"Filton", }
+ 
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+   
+  var greenwich = {Constituencyname:"Greenwich", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"East Ham", Neighbour2:"Erith", Neighbour3:"Eltham", Neighbour4:"Lewisham Deptford", Neighbour5:"Lewisham East", Neighbour6:"Poplar", }
+
+  var eastHam = {Constituencyname:"East Ham", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"Barking", Neighbour2:"Ilford South", Neighbour3:"Leyton", Neighbour4:"West Ham", Neighbour5:"Greenwich", }
+  
+  var westHam = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"East Ham", Neighbour2:"Hackney South", Neighbour3:"Bethnel Green", Neighbour4:"Leyton", Neighbour5:"Poplar", }
+  
+  var poplar = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"West Ham", Neighbour2:"Bethnel Green", Neighbour3:"Cities", Neighbour4:"Bermondsey", Neighbour5:"Greenwich",}
+
+  
+  var lewishamDeptford = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                
+  Neighbour1:"Bermondsey", Neighbour2:"Camberwell", Neighbour3:"Lewisham West", Neighbour4:"Lewisham East", Neighbour5:"Greenwich", }
+  
+  var bermondsey = {Constituencyname:"Bermondsey", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                               
+  Neighbour1:"Camberwell", Neighbour2:"Vauxhall", Neighbour3:"Cities", Neighbour4:"Poplar", Neighbour5:"Lewisham Deptford", }
+  
+  var city = {Constituencyname:"Cities", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                 
+  Neighbour1:"Islington South", Neighbour2:"Hackney South", Neighbour3:"Bethnel Green", Neighbour4:"Poplar", Neighbour5:"Holborn", Neighbour6:"Westminster North", Neighbour7:"Kensington", Neighbour8:"Chelsea", Neighbour9:"Battersea", Neighbour10:"Vauxhall", Neighbour11:"Bermonsey", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                   
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN24,
+                                                                   Bxp19:,                                  
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  var dundeeEast = {Constituencyname:"Dundee East", Con15:7602, Con17:11746, Con19:10986, Con24:CON24,
+                                                   Lab15:9603, Lab17:11176, Lab19:6045, Lab24:LAB24,
+                                                   SNP15:28765, SNP17:18391, SNP19:24361, SNP24:SNP24,
+                                                                   Lib19:3573, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                  
+  Neighbour1:"Dundee West", Neighbour2:"NE Fife", Neighbour3:"Angus", }
+  
+  var nEFife = {Constituencyname:"NE Fife", Con15:7373, Con17:10088, Con19:5961, Con24:CON24,
+                                                   Lab15:3476, Lab17:4026, Lab19:1707, Lab24:LAB24,
+                                                   SNP15:18523, SNP17:13743, SNP19:18447, SNP24:SNP24,
+                                                                   Lib19:19763, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                  
+  Neighbour1:"Dundee East", Neighbour2:"Ochil", Neighbour3:"Glenrothes", }
+
+  
+  var dundeeWest = {Constituencyname:"Dundee West", Con15:3852, Con17:6257, Con19:5149, Con24:CON24,
+                                                   Lab15:10592, Lab17:12783, Lab19:10096, Lab24:LAB24,
+                                                   SNP15:27684, SNP17:18045, SNP19:22355,
+                                                                   Lib19:2468, Lib24:LIB24,
+                                                                   Grn24:GRN25,
+                                                                   Bxp19:1271,                                  
+  Neighbour1:"Dundee East", Neighbour2:"Perth", Neighbour3:"Angus", }
+  
+  var glenrothes = {Constituencyname:"Glenrothes", Con15:3685, Con17:7876, Con19:6920, Con24:CON24,
+                                                   Lab15:14562, Lab17:14024, Lab19:9477, Lab24:LAB24,
+                                                   SNP15:28459, SNP17:17291, SNP19:21234, SNP24:SNP24,
+                                                                   Lib19:2639, Lib24:LIB24,
+                                                                   Grn24:GRN25,
+                                                                   Bxp19:1276,                                  
+  Neighbour1:"NE Fife", Neighbour2:"Ochil", Neighbour3:"Kirkaldy", }
+  
+  var ochil = {Constituencyname:"Ochil", Con15:11987, Con17:22469, Con19:22384, Con24:CON24,
+                                                   Lab15:16452, Lab17:10847, Lab19:4961, Lab24:LAB24,
+                                                   SNP15:26620, SNP17:19110, SNP19:26882, SNP24:SNP24,
+                                                                   Lib19:3204, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                  
+  Neighbour1:"Perth", Neighbour2:"Stirling", Neighbour3:"Dumfirmline", Neighbour4:"Kirkaldy", Neighbour5:"Glenrothes", Neighbour6:"NE Fife", }
+  
+  var kirkcaldy = {Constituencyname:"Kirkcaldy", Con15:5223, Con17:10762, Con19:9449, Con24:CON24,
+                                                   Lab15:17654, Lab17:17016, Lab19:15325, Lab24:LAB24,
+                                                   SNP15:27628, SNP17:16757, SNP19:16568, SNP24:SNP24,
+                                                                   Lib19:2903, Lib24:LIB24,
+                                                                   Grn19:1628, Grn24:GRN25,
+                                                                   Bxp19:1132,                                  
+  Neighbour1:"Glenrothes", Neighbour2:"Ochil", Neighbour3:"Dumfirmline", }
+  
+  var dumfirmline = {Constituencyname:"Dumfirmline", Con15:6623, Con17:12593, Con19:11207, Con24:CON24,
+                                                   Lab15:17744, Lab17:17277, Lab19:13028, Lab24:LAB24,
+                                                   SNP15:28096, SNP17:18121, SNP19:23727, SNP24:SNP24,
+                                                                   Lib19:4262, Lib24:LIB24,
+                                                                   Grn19:1258, Grn24:GRN25,                               
+  Neighbour1:"Ochil", Neighbour2:"Falkirk", Neighbour3:"Edinburgh W", Neighbour4:"Kirkcaldy", }
+  
+  var falkirk = {Constituencyname:"Falkirk", Con15:7325, Con17:14088, Con19:14403, Con24:CON24,
+                                                   Lab15:15130, Lab17:16029, Lab19:6243, Lab24:LAB24,
+                                                   SNP15:34831, SNP17:20952, SNP19:29351, SNP24:SNP24,
+                                                                   Lib19:3990, Lib24:LIB24,
+                                                                   Grn19:1885, Grn24:GRN25,                                  
+  Neighbour1:"Dumfirmline", Neighbour2:"Stirling", Neighbour3:"Cumbernauld", Neighbour4:"Linlithgow", }
+
+  
+  var stirling = {Constituencyname:"Stirling", Con15:12051, Con17:18291, Con19:17641, Con24:CON24,
+                                                   Lab15:13303, Lab17:10902, Lab19:4275, Lab24:LAB24,
+                                                   SNP15:23783, SNP17:18143, SNP19:26895, SNP24:SNP24,
+                                                                   Lib19:2867, Lib24:LIB24,
+                                                                   Grn19:942, Grn24:GRN25,                                   
+  Neighbour1:"West Dunbartonshire", Neighbour2:"East Dunbartonshire", Neighbour3:"Cumbernauld", Neighbour4:"Falkirk", Neighbour5:"Ochil", Neighbour6:"Perth", Neighbour7:"Argyll", }
+  
+  
+  var argyll = {Constituencyname:"Argyll", Con15:7733, Con17:15976, Con19:16930, Con24:CON24,
+                                                   Lab15:5394, Lab17:6044, Lab19:3248, Lab24:LAB24,
+                                                   SNP15:22959, SNP17:17304, SNP19:21040, SNP24:SNP24,
+                                                                   Lib19:6832, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                   
+  Neighbour1:"North Ayrshire", Neighbour2:"Inverclyde", Neighbour3:"Ross", Neighbour4:"Perth", Neighbour5:"Stirling", Neighbour6:"Na h-Eileanan an Iar", }
+  
+  var inverclyde = {Constituencyname:"Inverclyde", Con15:4446, Con17:8399, Con19:6265, Con24:CON24,
+                                                   Lab15:13522, Lab17:14666, Lab19:11783, Lab24:LAB24,
+                                                   SNP15:24585, SNP17:15050, SNP19:19295, SNP24:SNP24,
+                                                                   Lib19:2560, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                   
+  Neighbour1:"Paisley & Renfrewshire North", Neighbour2:"Argyll", Neighbour3:"North Ayrshire", Neighbour4:"Paisley & Renfrewshire South", }
+  
+  var ross  = {Constituencyname:"Ross", Con15:2593, Con17:9561, Con19:6900, Con24:CON24,
+                                                   Lab15:2043, Lab17:4695, Lab19:2448, Lab24:LAB24,
+                                                   SNP15:20119, SNP17:15480, SNP19:19263, SNP24:SNP24,
+                                                                   Lib19:9820, Lib24:LIB24,
+                                                                   Grn24:GRN25,
+                                                                   Bxp19:710,                                   
+  Neighbour1:"Caithness", Neighbour2:"Perth", Neighbour3:"Inverness", Neighbour4:"Argyll", Neighbour5:"Na h-Eileanan an Iar", }
+  
+  var westernIsles = {Constituencyname:"Na h-Eileanan an Iar", Con15:1215, Con17:2441, Con19:3216, Con24:CON24,
+                                                   Lab15:4560, Lab17:5006, Lab19:4093, Lab24:LAB24,
+                                                   SNP15:8662, SNP17:6013, SNP19:6531, SNP24:SNP24,
+                                                                   Lib19:637, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                   
+  Neighbour1:"Argyll", Neighbour2:"Ross", }
+  
+  var caithness = {Constituencyname:"Caithness", Con15:2326, Con17:6990, Con19:5176, Con24:CON24,
+                                                   Lab15:3061, Lab17:3833, Lab19:1936, Lab24:LAB24,
+                                                   SNP15:15831, SNP17:9017, SNP19:11501, SNP24:SNP24,
+                                                                   Lib19:11705, Lib24:LIB24, Grn24:GRN25,
+                                                                   Bxp19:1139,                                   
+  Neighbour1:"Ross", Neighbour2:"Orkney", }
+  
+  var orkney = {Constituencyname:"Orkney", Con15:2025, Con17:2024, Con19:2287, Con24:CON24,
+                                                   Lab15:1624, Lab17:2664, Lab19:1550, Lab24:LAB24,
+                                                   SNP15:8590, SNP17:6749, SNP19:7874, SNP24:SNP24,
+                                                                   Lib19:10381, Lib24:LIB24,
+                                                                   Grn24:GRN25,
+                                                                   Bxp19:900,                                   
+  Neighbour1:"Caithness", }
+  
+  var inverness = {Constituencyname:"Inverness", Con15:3410, Con17:16118, Con19:15807, Con24:CON24,
+                                                   Lab15:4311, Lab17:8552, Lab19:4123, Lab24:LAB24,
+                                                   SNP15:28838, SNP17:21042, SNP19:26247, SNP24:SNP24,
+                                                                   Lib19:5846, Lib24:LIB24,
+                                                                   Grn19:1709, Grn24:GRN25,
+                                                                   Bxp19:1078,                                   
+  Neighbour1:"Perth", Neighbour2:"Ross", Neighbour3:"Moray", Neighbour4:"West Aberdeenshire", }
+  
+  
+  var moray = {Constituencyname:"Moray", Con15:15319, Con17:22637, Con19:22112, Con24:CON24,
+                                                   Lab15:4898, Lab17:5208, Lab19:2432, Lab24:LAB24,
+                                                   SNP15:24384, SNP17:18478, SNP19:21599, SNP24:SNP24,
+                                                                   Lib19:2269, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                   
+  Neighbour1:"Inverness", Neighbour2:"West Aberdeenshire", Neighbour3:"Gordon", Neighbour4:"Banff", }
+  
+  var banff = {Constituencyname:"Banff", Con15:13148, Con17:19976, Con19:21182, Con24:CON24,
+                                                   Lab15:2647, Lab17:3936, Lab19:1734, Lab24:LAB24,
+                                                   SNP15:27487, SNP17:16283, SNP19:17064, SNP24:SNP24,
+                                                                   Lib19:2280, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                   
+  Neighbour1:"Moray", Neighbour2:"Gordon", }
+  
+  var gordon = {Constituencyname:"Gordon", Con15:6807, Con17:21861, Con19:23066, Con24:CON24,
+                                                   Lab15:3441, Lab17:6340, Lab19:3052, Lab24:LAB24,
+                                                   SNP15:27717, SNP17:19254, SNP19:23885, SNP24:SNP24,
+                                                                   Lib19:5913, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                   
+  Neighbour1:"West Aberdeenshire", Neighbour2:"Aberdeen North", Neighbour3:"Moray", }
+  
+  var aberdeenNorth = {Constituencyname:"Aberdeen North", Con15:5304, Con17:8341, Con19:7535, Con24:CON24,
+                                                   Lab15:11397, Lab17:11031, Lab19:4939, Lab24:LAB24,
+                                                   SNP15:24793, SNP17:15170, SNP19:20205, SNP24:SNP24,
+                                                                   Lib19:2846, Lib24:LIB24,
+                                                                   Grn19:880, Grn24:GRN25,
+                                                                   Bxp19:1008,                                   
+  Neighbour1:"Aberdeen South", Neighbour2:"West Aberdeenshire", Neighbour3:"Gordon", }
+  
+  var aberdeenSouth = {Constituencyname:"Aberdeen South", Con15:11087, Con17:18746, Con19:16398, Con24:CON24,
+                                                   Lab15:12991, Lab17:9143, Lab19:3834, Lab24:LAB24,
+                                                   SNP15:20221, SNP17:13994, SNP19:20388, SNP24:SNP24,
+                                                                   Lib19:5018, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                   
+  Neighbour1:"West Aberdeenshire", Neighbour2:"Aberdeen North", }
+  
+  
+  var westAberdeenshire = {Constituencyname:"West Aberdeenshire", Con15:15916, Con17:24704, Con19:22752, Con24:CON24,
+                                                   Lab15:2487, Lab17:5706, Lab19:2431, Lab24:LAB24,
+                                                   SNP15:22949, SNP17:16754, SNP19:21909, SNP24:SNP24,
+                                                                   Lib19:6263, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                  
+  Neighbour1:"Aberdeen North", Neighbour2:"Aberdeen South", Neighbour3:"Gordon", Neighbour4:"Moray", Neighbour5:"Perth", Neighbour6:"Angus",Neighbour7:"Inverness", }
+  
+  var angus = {Constituencyname:"Angus", Con15:12900, Con17:18148, Con19:17421, Con24:CON24,
+                                                   Lab15:3919, Lab17:5233, Lab19:2051, Lab24:LAB24,
+                                                   SNP15:24130, SNP17:15503, SNP19:21216, SNP24:SNP24,
+                                                                   Lib19:2482, Lib24:LIB24,
+                                                                   Grn24:GRN25,                                   
+  Neighbour1:"West Aberdeenshire", Neighbour2:"Dundee East", Neighbour3:"Dundee West", Neighbour4:"Perth", }
+  
+  var perth = {Constituencyname:"Perth", Con15:17738, Con17:21783, Con19:19812, Con24:CON24,
+                                                   Lab15:4413, Lab17:5349, Lab19:2471, Lab24:LAB24,
+                                                   SNP15:27379, SNP17:21804, SNP19:27362, SNP24:SNP24,
+                                                                   Lib19:3780, Lib24:LIB24,
+                                                                   Grn24:GRN25,
+                                                                   Bxp19:651,                                   
+  Neighbour1:"Inverness", Neighbour2:"Ross", Neighbour3:"Angus", Neighbour4:"Dundee West", Neighbour5:"West Aberdeenshire", Neighbour6:"Argyll", Neighbour7:"Stirling", Neighbour8:"Ochil", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                   SNP15:, SNP17:, SNP19:, SNP24:SNP24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN25,
+                                                                   Bxp19:,                                   
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                   SNP15:, SNP17:, SNP19:, SNP24:SNP24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN25,
+                                                                   Bxp19:,                                   
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                   SNP15:, SNP17:, SNP19:, SNP24:SNP24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN25,
+                                                                   Bxp19:,                                   
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                   SNP15:, SNP17:, SNP19:, SNP24:SNP24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN25,
+                                                                   Bxp19:,                                   
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                   SNP15:, SNP17:, SNP19:, SNP24:SNP24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN25,
+                                                                   Bxp19:,                                   
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                   SNP15:, SNP17:, SNP19:, SNP24:SNP24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN25,
+                                                                   Bxp19:,                                   
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  var  = {Constituencyname:"", Con15:, Con17:, Con19:, Con24:CON24,
+                                                   Lab15:, Lab17:, Lab19:, Lab24:LAB24,
+                                                   SNP15:, SNP17:, SNP19:, SNP24:SNP24,
+                                                                   Lib19:, Lib24:LIB24,
+                                                                   Grn19:, Grn24:GRN25,
+                                                                   Bxp19:,                                   
+  Neighbour1:"", Neighbour2:"", Neighbour3:"", Neighbour4:"", Neighbour5:"", Neighbour6:"", Neighbour7:"", Neighbour8:"", }
+  
+  
+                                                                  
+          
+          // Display some data from the object:
+          document.getElementById("demo").innerHTML = "The car type is " + car.type;
+          </script>
+
+        <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+<p>Insert first constituency</p>
+<p>Its unlisted neighbouring constituencies</p>
+
+<input type="text" id="ncon1" value="">
+<input type="text" id="ncon2" value="">
+<input type="text" id="ncon3" value="">
+<input type="text" id="ncon4" value="">
+<input type="text" id="ncon5" value="">
+<input type="text" id="ncon6" value="">
+<input type="text" id="ncon7" value="">
+<input type="text" id="ncon8" value=""><br>
+
+<p>Ward input</p>
+
+
+<input type="text" id="ward0" value="">
+<br>
+<p>The ward's neighbouring wards choices from already listed</p>
+<br><input type="text" id="ward1" value="">
+<br><input type="text" id="ward2" value="">
+<br><input type="text" id="ward3" value="">
+<br><input type="text" id="ward4" value="">
+<br><input type="text" id="ward5" value="">
+<br><input type="text" id="ward6" value="">
+<br><input type="text" id="ward7" value="">
+<br><input type="text" id="ward8" value="">
+<br><input type="text" id="ward9" value="">
+<br><input type="text" id="ward10" value="">
+<br><input type="text" id="ward11" value="">
+
+
+
+
+         
